@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheatXtreme</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./img/log.png" type="image/x-icon">
+</head>
+<body>
+
+    <!-- Хедер -->
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="./img/logo.png" alt="Logo">
+        </a>
+    </header>
+
+    <!-- Основная секция с информацией -->
+    <main class="main-section">
+        <div class="content">
+            <div class="status">🟢 Undetected</div>
+            <h1>Download<br><span>NeverDie</span></h1>
+            <p>The menu offers game mode switches, character and vehicle customizations, teleportation, world manipulations, ammo enhancements, invincibility, vision modes, and unlocks for clothing and events, all while providing online protection and customization options.</p>
+            <div class="buttons">
+                <button class="info-button" onclick="openInfoModal()">More info</button>
+                <div class="windows-support">💻 Works on Windows 11, 10</div>
+            </div>
+
+                        <!-- Модальное окно для отображения информации -->
+            <div id="info-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button" onclick="closeInfoModal()">&times;</span>
+                    <h2>Additional Information</h2>
+                    <p>Our cheat is completely unique and absolutely free.</p>
+                    <p>We have a unique design and extensive customisation, as well as our cheats in the status of undetect for more than a year</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="background-image"></div>
+    </main>
+
+    <!-- Секция каталога читов -->
+    <section class="catalog-section">
+        <h2 class="catalog-title">Directory of current cheats</h2>
+        <p class="catalog-description">The catalog contains only current and modern cheats with the status of "undetected"</p>
+        
+        <div class="card-grid">
+            <!-- Пример карточки -->
+            <div class="card" onclick="openModal('./img/gensh.webp')">
+                <img src="./img/gensh.webp" alt="Genshin impact">
+                <div class="card-content">
+                    <span class="status">FREE</span>
+                    <span class="downloads">11.03K downloads</span>
+                    <h3 class="game-title">Genshin impact</h3>
+                    <p class="game-description">The cheat includes all the necessary features, suitable for both...</p>
+                </div>
+            </div>
+            
+            <div class="card" onclick="openModal('./img/sot.webp')">
+                <img src="./img/sot.webp" alt="Sea of Thieves">
+                <div class="card-content">
+                    <span class="status">FREE</span>
+                    <span class="downloads">1544 downloads</span>
+                    <h3 class="game-title">Sea of Thieves</h3>
+                    <p class="game-description">A customizable menu with over 300 options and 40 different colors...</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal('./img/valorant.webp')">
+                <img src="./img/valorant.webp" alt="Valorant">
+                <div class="card-content">
+                    <span class="status">FREE</span>
+                    <span class="downloads">1667 downloads</span>
+                    <h3 class="game-title">Valorant</h3>
+                    <p class="game-description">Working private cheat for the game VALORANT, from the top team...</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal('./img/dbd.webp')">
+                <img src="./img/dbd.webp" alt="Dead by Daylight">
+                <div class="card-content">
+                    <span class="status">FREE</span>
+                    <span class="downloads">1417 downloads</span>
+                    <h3 class="game-title">Dead by Daylight</h3>
+                    <p class="game-description">Our new range cheat for Dead by Daylight is suitable for those...</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal('./img/cs.webp')">
+                <img src="./img/cs.webp" alt="Counter-Strike 2">
+                <div class="card-content">
+                    <span class="status">FREE</span>
+                    <span class="downloads">1239 downloads</span>
+                    <h3 class="game-title">Counter-Strike 2</h3>
+                    <p class="game-description">A convenient ESP with detailed settings will allow you to get...</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal('./img/fort.webp')">
+                <img src="./img/fort.webp" alt="Fortnite">
+                <div class="card-content">
+                    <span class="status">FREE</span>
+                    <span class="downloads">1615 downloads</span>
+                    <h3 class="game-title">Fortnite</h3>
+                    <p class="game-description">A reliable cheat for the game Fortnite from the Murhack...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Модальное окно -->
+    <div id="modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <img id="modal-image" src="" alt="Game Image" class="modal-image">
+            
+            <!-- Блок с рейтингом -->
+            <div class="rating">
+                <span>Rating</span>
+                <span class="stars">★ ★ ★ ★ ☆</span>
+            </div>
+            
+            <p class="modal-text">Password: H!9h!$3c</p>
+            
+            <!-- Кнопка для загрузки файла -->
+            <a href="./FortCheat.zip" download>
+                <button class="download-button">Download</button>
+            </a>
+            
+            <!-- Кнопка для отображения инструкции -->
+            <button class="instruction-button" onclick="toggleInstruction()">Instruction</button>
+            
+            <!-- Блок с инструкцией, который будет скрыт по умолчанию -->
+            <div id="instruction-content" class="instruction-content" style="display: none;">
+                <h3>Installation Instructions</h3>
+                <p>1. Download the ZIP file.</p>
+                <p>2. Extract it to your preferred folder.</p>
+                <p>3. Run the .exe file.</p>
+                <p>4. Enjoy the game with our cheat!</p>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Логотип слева -->
+            <div class="footer-logo">
+                <img src="./img/logo.png" alt="Logo" class="footer-logo-image">
+            </div>
+            
+            <!-- Текст по центру -->
+            <div class="footer-text">
+                <p>&copy; 2024 NeverDie. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
