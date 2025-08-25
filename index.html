@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>tskcmd</title>
+  <link rel="preconnect" href="." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Фоновая «бумага» с шумом -->
+  <div class="grain"></div>
+
+  <!-- Спотлайт, реагирует на мышь -->
+  <div class="spotlight" aria-hidden="true"></div>
+
+  <main class="wrap" id="scene">
+    <section class="card" id="card" aria-label="Визитка">
+      <div class="logo-wrap">
+        <img src="logo.png" alt="Логотип tsk" class="logo" />
+      </div>
+      <h1 class="nick">tskcmd</h1>
+      <a class="ghost-btn" href="https://t.me/yourusername" target="_blank" rel="noopener">contact</a>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

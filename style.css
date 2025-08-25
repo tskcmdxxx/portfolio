@@ -1,0 +1,139 @@
+:root{
+  --bg:#0a0a0a;          /* фон */
+  --fg:#ffffff;          /* текст/иконки */
+  --muted:#bdbdbd;       /* вторичный */
+  --card:#111111;        /* карточка */
+  --edge:#1d1d1d;        /* рамки/границы */
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  overflow:hidden; /* чистый холст */
+}
+
+/* Фоновый «шум» */
+.grain{
+  position:fixed; inset:-50px;
+  pointer-events:none;
+  background:
+    radial-gradient(200vw 200vw at 50% 50%, #ffffff05 0%, #0000 60%),
+    repeating-conic-gradient(from 0deg, #fff1 0% 0.25%, #0000 0.25% 0.5%);
+  mix-blend-mode:soft-light;
+  filter:contrast(120%) brightness(100%) grayscale(1);
+  opacity:.15;
+  animation:grain 12s steps(10) infinite;
+}
+@keyframes grain{
+  0%{ transform:translate(0,0) }
+  10%{ transform:translate(-10px,6px) }
+  20%{ transform:translate(8px,-12px) }
+  30%{ transform:translate(12px,8px) }
+  40%{ transform:translate(-6px,14px) }
+  50%{ transform:translate(0,0) }
+  60%{ transform:translate(10px,-6px) }
+  70%{ transform:translate(-8px,12px) }
+  80%{ transform:translate(-12px,-8px) }
+  90%{ transform:translate(6px,-14px) }
+  100%{ transform:translate(0,0) }
+}
+
+/* Спотлайт */
+.spotlight{
+  position:fixed; inset:0;
+  pointer-events:none;
+  --x:50%; --y:50%;
+  background:
+    radial-gradient(400px 400px at var(--x) var(--y),
+      #ffffff18 0%, #ffffff08 40%, #00000000 70%);
+  transition:background .08s linear;
+}
+
+/* Центровка сцены */
+.wrap{
+  position:fixed; inset:0;
+  display:grid;
+  place-items:center;
+  perspective:1100px;
+  padding:24px;
+}
+
+/* Карточка */
+.card{
+  width: min(92vw, 680px);
+  aspect-ratio: 16/9;
+  background: linear-gradient(180deg,#131313 0%,#0d0d0d 100%);
+  border:1px solid var(--edge);
+  border-radius:28px;
+  box-shadow:
+    0 40px 120px #0009,
+    inset 0 1px 0 #ffffff10,
+    inset 0 -1px 0 #00000080;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:22px;
+  transform-style:preserve-3d;
+  transition: transform .12s ease-out, box-shadow .2s ease-out, border-color .2s;
+}
+
+/* Логотип */
+.logo-wrap{
+  width:120px; height:120px;
+  border-radius:26px;
+  border:1px solid var(--edge);
+  display:grid; place-items:center;
+  box-shadow: inset 0 0 0 1px #ffffff08;
+  transform:translateZ(50px);
+}
+.logo{
+  width:72%; height:auto; object-fit:contain; filter:grayscale(1) contrast(1.05);
+}
+
+/* Ник */
+.nick{
+  margin:0;
+  font-weight:800;
+  letter-spacing:.04em;
+  text-transform:lowercase;
+  font-size: clamp(32px, 8vw, 72px);
+  line-height:1;
+  transform:translateZ(60px);
+  text-shadow: 0 2px 0 #0008;
+}
+
+/* Кнопка (магнит) */
+.ghost-btn{
+  display:inline-block;
+  padding:12px 22px;
+  border:1px solid var(--edge);
+  color:var(--fg);
+  text-decoration:none;
+  border-radius:999px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  font-size:12px;
+  transform:translateZ(40px);
+  transition: transform .08s ease-out, border-color .2s, background .2s, color .2s;
+  background: #ffffff05;
+  backdrop-filter: blur(2px);
+}
+.ghost-btn:hover{ border-color:#fff3; background:#ffffff10; }
+.ghost-btn:active{ transform:translateZ(40px) scale(.98); }
+
+/* Ховер-эффекты глубины */
+.card:hover{
+  box-shadow: 0 60px 160px #000a, inset 0 1px 0 #ffffff12, inset 0 -1px 0 #000000aa;
+  border-color:#2a2a2a;
+}
+
+/* Мобильная адаптация */
+@media (max-width:520px){
+  .card{ aspect-ratio:auto; padding:36px 20px; gap:18px }
+  .logo-wrap{ width:96px; height:96px }
+}
